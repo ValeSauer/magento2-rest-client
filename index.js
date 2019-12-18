@@ -7,6 +7,8 @@ var productMedia = require('./lib/product_media');
 var productAttributes = require('./lib/product_attributes');
 var productAttributeOptions = require('./lib/product_attribute_options');
 var productAttributeSetAttributes = require('./lib/product_attributeset_attributes');
+var customers = require('./lib/customers');
+var companies = require('./lib/companies');
 
 const MAGENTO_API_VERSION = 'V1';
 
@@ -23,6 +25,8 @@ module.exports.Magento2Client = function (options) {
     instance.productAttributeOptions = productAttributeOptions(client);
     instance.productAttributeSetAttributes = productAttributeSetAttributes(client);
     instance.productMedia = productMedia(client);
+    instance.customers = customers(client);
+    instance.companies = companies(client);
 
     return instance;
 }
