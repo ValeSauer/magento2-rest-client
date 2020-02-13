@@ -7,6 +7,7 @@ var productMedia = require('./lib/product_media');
 var productAttributes = require('./lib/product_attributes');
 var productAttributeOptions = require('./lib/product_attribute_options');
 var productAttributeSetAttributes = require('./lib/product_attributeset_attributes');
+var orders = require('./lib/orders');
 var customers = require('./lib/customers');
 var companies = require('./lib/companies');
 
@@ -27,6 +28,7 @@ module.exports.Magento2Client = function (options) {
     instance.productMedia = productMedia(client);
     instance.customers = customers(client);
     instance.companies = companies(client);
+    instance.orders = orders(client);
 
     return instance;
 }
